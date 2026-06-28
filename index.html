@@ -32,8 +32,8 @@
       position: absolute;
       top: 18px;
       right: 24px;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
       width: 300px;
       box-sizing: border-box;
@@ -45,10 +45,11 @@
     }
 
     .profile-links a {
+      text-align: center;
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
-      padding: 7px 11px;
+      padding: 7px 0;
       border-radius: 7px;
       background: rgba(255, 255, 255, 0.08);
     }
@@ -118,8 +119,37 @@
     }
 
     #volume-slider {
+      appearance: none;
       width: 110px;
-      accent-color: #ffd166;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #volume-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #ffd166;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.18);
+    }
+
+    #volume-slider::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      background: #ffd166;
+      border: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.18);
+    }
+
+    #volume-slider::-moz-range-track {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
     }
 
     .skin {
@@ -163,7 +193,7 @@
 
     <div class="profile-links">
       <a class="osu-link" href="https://osu.ppy.sh/users/14315987" target="_blank">osu!</a>
-      <a class="youtube-link" href="YOUR_YOUTUBE_LINK_HERE" target="_blank">YouTube</a>
+      <a class="youtube-link" href="https://www.youtube.com/@BabnosDouig" target="_blank">YouTube</a>
       <a class="twitch-link" href="https://www.twitch.tv/babnosdouig" target="_blank">Twitch</a>
     </div>
 
