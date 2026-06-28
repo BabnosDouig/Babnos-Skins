@@ -179,11 +179,17 @@
       border: 1px solid #30363d;
       border-radius: 8px;
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .skin:hover h2 {
       color: #ffe08a;
       text-decoration: underline;
+    }
+
+    .skin:hover img {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.7);
     }
   </style>
 </head>
@@ -198,7 +204,7 @@
     </div>
 
     <div class="music-controls">
-      <button class="music-button" onclick="toggleMusic()">Music: off</button>
+      <button class="music-button" onclick="toggleMusic()">Play music</button>
 
       <label class="volume-control">
         Volume
@@ -255,10 +261,10 @@
     function toggleMusic() {
       if (music.paused) {
         music.play();
-        musicButton.textContent = "Music: on";
+        musicButton.textContent = "Pause music";
       } else {
         music.pause();
-        musicButton.textContent = "Music: off";
+        musicButton.textContent = "Play music";
       }
     }
   </script>
