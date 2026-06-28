@@ -69,6 +69,44 @@
       color: #8f6bdc;
     }
 
+    .music-controls {
+      position: absolute;
+      top: 66px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(255, 209, 102, 0.35);
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .music-button {
+      color: #ffd166;
+      background: rgba(255, 255, 255, 0.08);
+      border: 0;
+      border-radius: 7px;
+      padding: 7px 11px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e6edf3;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    #volume-slider {
+      width: 90px;
+      accent-color: #ffd166;
+    }
+
     .skin {
       display: block;
       color: inherit;
@@ -113,6 +151,19 @@
       <a class="twitch-link" href="https://www.twitch.tv/babnosdouig" target="_blank">Twitch</a>
     </div>
 
+    <div class="music-controls">
+      <button class="music-button" onclick="toggleMusic()">Music: off</button>
+
+      <label class="volume-control">
+        Volume
+        <input id="volume-slider" type="range" min="0" max="100" value="20">
+      </label>
+
+      <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
     <a class="skin" href="Babnos Willy.osk" download>
       <h2>Babnos Willy</h2>
       <img src="Babnos Willy.png" alt="Babnos Willy skin preview">
@@ -143,5 +194,27 @@
       <img src="Babnos Clack.png" alt="Babnos Clack skin preview">
     </a>
   </main>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const musicButton = document.querySelector(".music-button");
+    const volumeSlider = document.getElementById("volume-slider");
+
+    music.volume = 0.2;
+
+    volumeSlider.addEventListener("input", () => {
+      music.volume = volumeSlider.value / 100;
+    });
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicButton.textContent = "Music: on";
+      } else {
+        music.pause();
+        musicButton.textContent = "Music: off";
+      }
+    }
+  </script>
 </body>
 </html>
