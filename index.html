@@ -12,6 +12,7 @@
     }
 
     main {
+      position: relative;
       max-width: 980px;
       margin: 48px auto;
       padding: 24px;
@@ -22,7 +23,50 @@
     h1 {
       border-bottom: 1px solid #30363d;
       padding-bottom: 10px;
+      padding-right: 260px;
       margin-top: 0;
+    }
+
+    .profile-links {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .profile-links a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 7px 11px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .profile-links .osu-link {
+      color: #ff7cbb;
+    }
+
+    .profile-links .twitch-link {
+      color: #6441a5;
+    }
+
+    .profile-links a:hover {
+      transform: translateY(-1px);
+    }
+
+    .profile-links .osu-link:hover {
+      color: #ff87c6;
+    }
+
+    .profile-links .twitch-link:hover {
+      color: #8f6bdc;
     }
 
     .skin {
@@ -62,6 +106,11 @@
 <body>
   <main>
     <h1>Babnos Skins</h1>
+
+    <div class="profile-links">
+      <a class="osu-link" href="https://osu.ppy.sh/users/14315987" target="_blank">osu! profile</a>
+      <a class="twitch-link" href="https://www.twitch.tv/babnosdouig" target="_blank">Twitch</a>
+    </div>
 
     <a class="skin" href="Babnos Willy.osk" download>
       <h2>Babnos Willy</h2>
