@@ -54,33 +54,17 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    .profile-links .osu-link {
-      color: #ff7cbb;
-    }
-
-    .profile-links .youtube-link {
-      color: #ff0000;
-    }
-
-    .profile-links .twitch-link {
-      color: #6441a5;
-    }
+    .profile-links .osu-link { color: #ff7cbb; }
+    .profile-links .youtube-link { color: #ff0000; }
+    .profile-links .twitch-link { color: #6441a5; }
 
     .profile-links a:hover {
       transform: translateY(-1px);
     }
 
-    .profile-links .osu-link:hover {
-      color: #ff87c6;
-    }
-
-    .profile-links .youtube-link:hover {
-      color: #ff4d4d;
-    }
-
-    .profile-links .twitch-link:hover {
-      color: #8f6bdc;
-    }
+    .profile-links .osu-link:hover { color: #ff87c6; }
+    .profile-links .youtube-link:hover { color: #ff4d4d; }
+    .profile-links .twitch-link:hover { color: #8f6bdc; }
 
     .music-controls {
       position: absolute;
@@ -99,7 +83,8 @@
       backdrop-filter: blur(6px);
     }
 
-    .music-button {
+    .music-button,
+    .hitsound-button {
       color: #ffd166;
       background: rgba(255, 255, 255, 0.08);
       border: 0;
@@ -107,6 +92,10 @@
       padding: 7px 11px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .hitsound-button {
+      border: 1px solid rgba(255, 209, 102, 0.35);
     }
 
     .volume-control {
@@ -153,14 +142,23 @@
     }
 
     .skin {
-      display: block;
-      color: inherit;
-      text-decoration: none;
       margin-bottom: 32px;
     }
 
     .skin:last-child {
       margin-bottom: 0;
+    }
+
+    .skin-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .skin-download {
+      color: inherit;
+      text-decoration: none;
     }
 
     .skin h2 {
@@ -170,7 +168,11 @@
       border: 1px solid rgba(255, 209, 102, 0.4);
       border-radius: 8px;
       padding: 8px 14px;
-      margin-bottom: 12px;
+      margin: 0;
+    }
+
+    .skin-preview {
+      display: block;
     }
 
     .skin img {
@@ -216,45 +218,85 @@
       </audio>
     </div>
 
-    <a class="skin" href="Babnos Willy.osk" download>
-      <h2>Babnos Willy</h2>
-      <img src="Babnos Willy.png" alt="Babnos Willy skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos Willy.osk" download><h2>Babnos Willy</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos Willy normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos Willy.osk" download>
+        <img src="Babnos Willy.png" alt="Babnos Willy skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos xishu.osk" download>
-      <h2>Babnos xishu</h2>
-      <img src="Babnos xishu.png" alt="Babnos xishu skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos xishu.osk" download><h2>Babnos xishu</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos xishu normal-hitnormal.ogg')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos xishu.osk" download>
+        <img src="Babnos xishu.png" alt="Babnos xishu skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos Varvalian.osk" download>
-      <h2>Babnos Varvalian</h2>
-      <img src="Babnos Varvalian.png" alt="Babnos Varvalian skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos Varvalian.osk" download><h2>Babnos Varvalian</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos Varvalian normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos Varvalian.osk" download>
+        <img src="Babnos Varvalian.png" alt="Babnos Varvalian skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos DT.osk" download>
-      <h2>Babnos DT</h2>
-      <img src="Babnos DT.png" alt="Babnos DT skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos DT.osk" download><h2>Babnos DT</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos DT normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos DT.osk" download>
+        <img src="Babnos DT.png" alt="Babnos DT skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos DT Flipped.osk" download>
-      <h2>Babnos DT Flipped</h2>
-      <img src="Babnos DT Flipped.png" alt="Babnos DT Flipped skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos DT Flipped.osk" download><h2>Babnos DT Flipped</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos DT Flipped normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos DT Flipped.osk" download>
+        <img src="Babnos DT Flipped.png" alt="Babnos DT Flipped skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos Clack.osk" download>
-      <h2>Babnos Clack</h2>
-      <img src="Babnos Clack.png" alt="Babnos Clack skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos Clack.osk" download><h2>Babnos Clack</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos Clack normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos Clack.osk" download>
+        <img src="Babnos Clack.png" alt="Babnos Clack skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos Rektygon.osk" download>
-      <h2>Babnos Rektygon</h2>
-      <img src="Babnos Rektygon.png" alt="Babnos Rektygon skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos Rektygon.osk" download><h2>Babnos Rektygon</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos Rektygon normal-hitnormal.ogg')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos Rektygon.osk" download>
+        <img src="Babnos Rektygon.png" alt="Babnos Rektygon skin preview">
+      </a>
+    </div>
 
-    <a class="skin" href="Babnos Seabee.osk" download>
-      <h2>Babnos Seabee</h2>
-      <img src="Babnos Seabee.png" alt="Babnos Seabee skin preview">
-    </a>
+    <div class="skin">
+      <div class="skin-header">
+        <a class="skin-download" href="Babnos Seabee.osk" download><h2>Babnos Seabee</h2></a>
+        <button class="hitsound-button" onclick="playHitsound('hitsounds/Babnos Seabee normal-hitnormal.wav')">Preview hitsound</button>
+      </div>
+      <a class="skin-preview" href="Babnos Seabee.osk" download>
+        <img src="Babnos Seabee.png" alt="Babnos Seabee skin preview">
+      </a>
+    </div>
   </main>
 
   <script>
@@ -262,7 +304,7 @@
     const musicButton = document.querySelector(".music-button");
     const volumeSlider = document.getElementById("volume-slider");
 
-    music.volume = 0.05;
+    music.volume = 0.07;
 
     volumeSlider.addEventListener("input", () => {
       music.volume = volumeSlider.value / 100;
@@ -276,6 +318,12 @@
         music.pause();
         musicButton.textContent = "Play music";
       }
+    }
+
+    function playHitsound(file) {
+      const sound = new Audio(file);
+      sound.volume = 0.07;
+      sound.play();
     }
   </script>
 </body>
